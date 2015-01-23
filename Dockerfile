@@ -12,7 +12,7 @@ RUN apt-get -qq update \
 
 ENV PLOVR_DIR /usr/local/bin
 ENV PLOVR $PLOVR_DIR/plovr.jar
-ENV PLOVR_VERSION 1.1.0
+ENV PLOVR_VERSION 2.0.0
 
 RUN mkdir -p $PLOVR_DIR \
 && curl -s https://registry.npmjs.org/plovr/-/plovr-$PLOVR_VERSION.tgz \
