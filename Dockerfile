@@ -4,19 +4,18 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update \
 && apt-get -qq -y --no-install-recommends install \
-    curl \
-    tar \
     openjdk-7-jre \
     make \
+    wget \
 && apt-get clean
 
 ENV PLOVR_DIR /usr/local/bin
 ENV PLOVR $PLOVR_DIR/plovr.jar
-ENV PLOVR_VERSION 3.0.0
+ENV PLOVR_VERSION 3.1.0
 
-RUN mkdir -p $PLOVR_DIR \
-&& curl -s https://registry.npmjs.org/plovr/-/plovr-$PLOVR_VERSION.tgz \
- | tar -xOz package/bin/plovr.jar > $PLOVR
+RUN mkdir -p $PLOVR_DIR && \
+  wget --no-check-certificate -q -P $PLOVR_DIR \
+  https://github.com/bolinfest/plovr/releases/download/v$PLOVR_VERSION/plovr.jar
 
 EXPOSE 9810
 
