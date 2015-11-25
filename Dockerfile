@@ -11,7 +11,7 @@ RUN apt-get -qq update \
 
 ENV PLOVR_DIR /usr/local/bin
 ENV PLOVR $PLOVR_DIR/plovr.jar
-ENV PLOVR_VERSION 3.1.0
+ENV PLOVR_VERSION 4.0.0
 
 RUN mkdir -p $PLOVR_DIR && \
   wget --no-check-certificate -q -P $PLOVR_DIR \
