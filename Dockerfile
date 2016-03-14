@@ -2,7 +2,7 @@ FROM debian:8
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PLOVR_DIR=/usr/local/bin \
-    PLOVR=$PLOVR_DIR/plovr.jar \
+    PLOVR=/usr/local/bin/plovr.jar \
     PLOVR_VERSION=5.0.1
 
 RUN apt-get -qq update \
