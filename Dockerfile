@@ -9,6 +9,7 @@ RUN apt-get -qq update \
 && apt-get -qq -y --no-install-recommends install \
     openjdk-7-jre \
     make \
+    rsync \
     wget \
 && apt-get clean \
 && mkdir -p $PLOVR_DIR \
